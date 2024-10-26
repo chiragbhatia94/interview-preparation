@@ -1,4 +1,4 @@
-package dsa;
+package dsa.iowrapper_test;
 
 import java.util.Scanner;
 

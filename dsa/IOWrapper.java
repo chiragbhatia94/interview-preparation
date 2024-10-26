@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 
+import dsa.iowrapper_test.Test;
+
 public class IOWrapper {
 
     static final File ip = new File("input.txt");
