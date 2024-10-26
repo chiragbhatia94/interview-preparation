@@ -12,5 +12,6 @@ public class Test {
             int a = sc.nextInt();
             System.out.println(a);
         }
+        sc.close();
     }
 }
