@@ -1,0 +1,21 @@
+{
+    "code-builder.build.inputFilePath": "$HOME/Code/learn/interview-preparation/input.txt",
+    "code-builder.build.outputFilePath": "$HOME/Code/learn/interview-preparation/output.txt",
+    "code-builder.build.executorMap": {
+        // "java": "cd $dir && javac -cp $classPath $fileName && java -cp $classPath $qualifiedName",
+        "java": "java -cp \"$HOME/Code/learn/interview-preparation:$HOME/Code/learn/interview-preparation/lib/*:$HOME/Library/Application Support/Code/User/workspaceStorage/f682cae6506824b02a8de8ab83518f01/redhat.java/jdt_ws/interview-preparation_4d0d5157/bin\" $qualifiedName",
+        "python": "cd $dir && python $fileName",
+        "c": "cd $dir && g++ $fileName $compilerArgs -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+        "cpp": "cd $dir && g++ $fileName $compilerArgs -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+        "javascript": "cd $dir && node $fileName",
+        "typescript": "cd $dir && ts-node $fileName",
+        "ruby": "cd $dir && ruby $fileName",
+        "go": "cd $dir && go build $fileName && ./$fileNameWithoutExt",
+        "r": "cd $dir && Rscript $fileName",
+        "rust": "cargo run"
+    },
+    // "java.project.outputPath": "bin",
+    "code-builder.java.useAutoClassPath": true,
+    // "code-builder.build.debugData": true,
+    // "code-builder.java.classPath": "$HOME/Library/Application Support/Code/User/workspaceStorage/f682cae6506824b02a8de8ab83518f01/redhat.java/jdt_ws/interview-preparation_4d0d5157/bin",
+}
