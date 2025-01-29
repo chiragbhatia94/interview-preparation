@@ -1,52 +1,28 @@
 package dsa.prime_number;
 
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
+import java.util.Set;
 
 /**
- * Problem statement
- * You are given an integer 'n'. Return 'true' if 'n' is an Armstrong number,
- * and 'false' otherwise.
+ * Check for Prime Number: https://www.geeksforgeeks.org/check-for-prime-number/
  * 
+ * Input:  n = 10
+ * Output: false
+ * Explanation: 10 is divisible by 2 and 5 
  * 
- * An Armstrong number is a number (with 'k' digits) such that the sum of its
- * digits raised to 'kth' power is equal to the number itself. For example, 371
- * is an Armstrong number because 3^3 + 7^3 + 1^3 = 371.
+ * Input:  n = 11
+ * Output: true
+ * Explanation: 11 is divisible by 1 and 11 only
  * 
- * Detailed explanation ( Input/output format, Notes, Images )
- * Sample Input 1 :
- * 1
+ * Input:  n = 1
+ * Output: false
+ * Explanation: 1 is neither composite nor prime
  * 
- * 
- * Sample Output 1 :
- * true
- * 
- * 
- * Explanation of Sample Input 1 :
- * 1 is an Armstrong number as, 1^1 = 1.
- * 
- * 
- * Sample Input 2 :
- * 103
- * 
- * 
- * Sample Output 2 :
- * false
- * 
- * 
- * Sample Input 3 :
- * 1634
- * 
- * 
- * Sample Output 3 :
- * true
- * 
- * 
- * Explanation of Sample Input 3 :
- * 1634 is an Armstrong number, as 1^4 + 6^4 + 3^4 + 4^4 = 1634
+ * Input:  n = 0
+ * Output: false
+ * Explanation: 0 is neither composite nor prime
  */
 public class PrimeNumber {
     public static void main(String[] args) {
@@ -54,48 +30,30 @@ public class PrimeNumber {
         int s = sc.nextInt();
         for (int i = 0; i < s; i++) {
             String a = sc.next();
-            System.out.println(checkIfArmstrongNumber(a));
+            System.out.println(checkIfPrimeNumber(a));
         }
         sc.close();
     }
 
-    private static boolean checkIfArmstrongNumber(String a) {
-        int finalNumber = Integer.parseInt(a);
-        if (finalNumber == 1) {
+    private static boolean checkIfPrimeNumber(String a) {
+        List<Integer> divisors = findAllDivisors(Integer.parseInt(a));
+        System.out.println("divisors of " + a + " are "+ divisors.toString());
+        if (divisors.size() == 2) {
             return true;
         }
-        List<Integer> numbers = Arrays.asList(a.split("")).stream().map(i -> Integer.parseInt(i))
-                .collect(Collectors.toList());
-        // System.out.println(numbers.toString());
-        Collections.sort(numbers, Collections.reverseOrder());
-        // System.out.println(numbers.toString());
-
-        int highestNumber = numbers.get(0);
-        int maxPower = 1;
-
-        while (true) {
-            if (highestNumber == 1) {
-                break;
-            }
-            if (Math.pow(highestNumber, maxPower) > finalNumber) {
-                break;
-            } else {
-                maxPower++;
-            }
-        }
-
-        // System.out.println("maxPower "+maxPower);
-
-        for (int i = maxPower; i >= 1; i--) {
-            int sum = 0;
-            for (int number : numbers) {
-                sum += Math.pow(number, i);
-            }
-            if (sum == finalNumber) {
-                return true;
-            }
-        }
-
         return false;
+    }
+
+    private static List<Integer> findAllDivisors(int a) {
+        Set<Integer> divisors = new HashSet<>();
+        // divisors.add(1);
+        // divisors.add(a);
+        for (int i = 1; i <= Math.sqrt(a); i++) {
+            if (a % i == 0) {
+                divisors.add(i);
+                divisors.add(a / i);
+            }
+        }
+        return List.copyOf(divisors);
     }
 }

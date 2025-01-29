@@ -1,4 +1,8 @@
-true
+divisors of 1 are [1]
 false
+divisors of 103 are [1, 103]
 true
-true
+divisors of 1634 are [1, 817, 1634, 2, 19, 86, 38, 43]
+false
+divisors of 371 are [1, 371, 53, 7]
+false
