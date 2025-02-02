@@ -1,6 +1,5 @@
 package dsa.missing_number;
 
-import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.Scanner;
 
