@@ -35,6 +35,12 @@ I am going to follow BFS, Revision & then going into depth as time progresses.
 
 https://github.com/mukul96/System-Design-AlexXu/tree/master
 
+### Cheatsheets
+
+https://algo.monster/flowchart
+
+https://algo.monster/problems/stats
+
 ## Programming
 
 Basics of programming in following languages
