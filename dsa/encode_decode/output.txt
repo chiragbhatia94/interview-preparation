@@ -1,0 +1,6 @@
+0 divisors : [1]
+1 divisors : [1, 2]
+2 divisors : [1, 3]
+3 divisors : [1, 2, 4]
+4 divisors : [1, 5]
+Sum of divisors: 21
